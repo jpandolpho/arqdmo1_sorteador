@@ -3,13 +3,12 @@ package br.edu.ifsp.dmo1.sorteador.view
 import android.os.Bundle
 import android.view.View
 import android.view.View.OnClickListener
-import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import br.edu.ifsp.dmo1.sorteador.R
 import br.edu.ifsp.dmo1.sorteador.databinding.ActivityMainBinding
 import br.edu.ifsp.dmo1.sorteador.model.Draw
 
-class MainActivity : AppCompatActivity(), OnClickListener{
+class MainActivity : AppCompatActivity(), OnClickListener {
     private lateinit var binding: ActivityMainBinding
     private var draw = Draw()
 
@@ -22,19 +21,20 @@ class MainActivity : AppCompatActivity(), OnClickListener{
     }
 
     override fun onClick(v: View?) {
-        when(v){
-            binding.buttonUseLimit ->{
-                val limit:Int = try{
+        when (v) {
+            binding.buttonUseLimit -> {
+                val limit: Int = try {
                     binding.editLimit.text.toString().toInt()
-                }catch(e: NumberFormatException){
+                } catch (e: NumberFormatException) {
                     -1
                 }
-                draw = if(limit>1)
+                draw = if (limit > 1)
                     Draw(limit)
                 else
                     Draw()
                 updateUI()
             }
+
             binding.buttonDraw -> {
                 binding.textviewExit.text = draw.getNumber().toString()
                 updateListview()
@@ -43,11 +43,7 @@ class MainActivity : AppCompatActivity(), OnClickListener{
     }
 
     private fun updateListview() {
-        val adapter: ArrayAdapter<Int> = ArrayAdapter(
-            this,
-            android.R.layout.simple_list_item_1,
-            draw.getHistory()
-        )
+        val adapter: DrawAdapter = DrawAdapter(this, draw.getHistory())
         binding.listviewDraw.adapter = adapter
     }
 

@@ -22,5 +22,5 @@ class Draw(private val border: Int = 0) {
 
     fun getHistory() = ArrayList(history)
     fun getLowBorder() = strategy.getLowBorder()
-    fun getHighBorder() = strategy.getHigBorder()
+    fun getHighBorder() = strategy.getHighBorder()
 }

@@ -10,7 +10,7 @@ class DefinedLlimit(private val border: Int) : SorteioStrategy() {
         return 1
     }
 
-    override fun getHigBorder(): Int {
+    override fun getHighBorder(): Int {
         return border
     }
 }

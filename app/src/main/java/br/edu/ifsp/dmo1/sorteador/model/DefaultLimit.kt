@@ -11,7 +11,7 @@ object DefaultLimit : SorteioStrategy() {
         return 1
     }
 
-    override fun getHigBorder(): Int {
+    override fun getHighBorder(): Int {
         return BORDER_DEFAULT
     }
 }

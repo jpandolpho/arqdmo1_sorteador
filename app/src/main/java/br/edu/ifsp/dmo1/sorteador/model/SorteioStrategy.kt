@@ -7,5 +7,5 @@ abstract class SorteioStrategy {
 
     abstract fun nextNumber(): Int
     abstract fun getLowBorder(): Int
-    abstract fun getHigBorder(): Int
+    abstract fun getHighBorder(): Int
 }

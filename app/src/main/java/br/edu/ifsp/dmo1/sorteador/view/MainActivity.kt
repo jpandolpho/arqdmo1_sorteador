@@ -3,6 +3,7 @@ package br.edu.ifsp.dmo1.sorteador.view
 import android.os.Bundle
 import android.view.View
 import android.view.View.OnClickListener
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.edu.ifsp.dmo1.sorteador.R
 import br.edu.ifsp.dmo1.sorteador.databinding.ActivityMainBinding
@@ -36,8 +37,16 @@ class MainActivity : AppCompatActivity(), OnClickListener {
             }
 
             binding.buttonDraw -> {
-                binding.textviewExit.text = draw.getNumber().toString()
-                updateListview()
+                if(draw.getHistory().size < draw.getHighBorder()) {
+                    binding.textviewExit.text = draw.getNumber().toString()
+                    updateListview()
+                }else{
+                    Toast.makeText(
+                        this,
+                        "Número máximo de sorteios atingido.",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
             }
         }
     }

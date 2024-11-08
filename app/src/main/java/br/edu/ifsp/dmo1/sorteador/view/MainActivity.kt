@@ -1,10 +1,11 @@
-package br.edu.ifsp.dmo1.sorteador
+package br.edu.ifsp.dmo1.sorteador.view
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import br.edu.ifsp.dmo1.sorteador.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

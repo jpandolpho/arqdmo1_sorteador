@@ -4,7 +4,7 @@ class Draw(private val border: Int = 0) {
     private lateinit var strategy: SorteioStrategy
     private val history = HashSet<Int>()
 
-    init{
+    init {
         if (border == 0)
             strategy = DefaultLimit
         else
@@ -13,9 +13,9 @@ class Draw(private val border: Int = 0) {
 
     fun getNumber(): Int {
         var number: Int
-        do{
+        do {
             number = strategy.nextNumber()
-        }while(!history.add(number))
+        } while (!history.add(number))
 
         return number
     }
